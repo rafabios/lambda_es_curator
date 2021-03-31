@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     es_password   = os.getenv('ES_PASSWORD')
     es_login      = os.getenv('ES_LOGIN')
     es_ssl        = os.getenv('ES_SSL')
-    es_ssl_verify - os.getenv('ES_SSL_VERIFY')
+    es_ssl_verify = os.getenv('ES_SSL_VERIFY')
     es_except_indices = os.getenv('ES_EXCEPT_INDICES')
     es_unit        = os.getenv('ES_UNIT')
     es_unit_count  = int(os.getenv('ES_UNIT_COUNT'))
