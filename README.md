@@ -34,6 +34,6 @@ This variables connects to AWS ES domain and delete all indices except kibana an
 
 Lambda Settings:
 
-- [Language/Version] - Python 3.6
-- [Memory] - 128Mb
-- [Function_Name] - lambda_function/lambda_handler
+- [Runtime/Version]  -  Python 3.6
+- [Memory]  -  128Mb
+- [Function_Name]  -  lambda_function.lambda_handler
