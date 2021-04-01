@@ -37,3 +37,5 @@ Lambda Settings:
 - [Runtime/Version]  -  Python 3.6
 - [Memory]  -  128Mb
 - [Function_Name]  -  lambda_function.lambda_handler
+- [Timeout] -  60 seconds
+- [Trigger] - EventBridge (CloudWatch Events): everyday rate(1 day)
