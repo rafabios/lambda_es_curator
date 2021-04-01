@@ -17,15 +17,15 @@ zip -r9 ~/lambda.zip .
 
 You must set the following variables:
 
-| Variable | Value |
-| ------ | ------ |
+| Variable | Value | Obs |
+| ------ | ------ | ------ |
 | ES_HOST | search-xxxxxxxxx.xx-xxx-x.es.amazonaws.com |
 | ES_PASSWORD | this_is_my_password |
 | ES_LOGIN | admin |
 | ES_SSL | True |
 | ES_SSL_VERIFY | True |
-| ES_EXCEPT_INDICES | kibana,opendistro  #separated by comma |
-| ES_UNIT | days |
+| ES_EXCEPT_INDICES | kibana,opendistro  | # separated by comma |
+| ES_UNIT | days | # minutes, hours...|
 | ES_UNIT_COUNT | 7 |
 
 This variables connects to AWS ES domain and delete all indices except kibana and opendistro in a period later than 7 days.
