@@ -18,6 +18,7 @@ def lambda_handler(event, context):
     if es_login:
      es = Elasticsearch(
     hosts = [{'host': es_host , 'port': 443}],
+    http_auth = (es_login, es_password),
     use_ssl = es_ssl,
     verify_certs = es_ssl_verify,
     connection_class = RequestsHttpConnection
@@ -25,7 +26,6 @@ def lambda_handler(event, context):
     else:
      es = Elasticsearch(
     hosts = [{'host': es_host , 'port': 443}],
-    http_auth = (es_login, es_password),
     use_ssl = es_ssl,
     verify_certs = es_ssl_verify,
     connection_class = RequestsHttpConnection
