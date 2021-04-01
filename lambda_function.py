@@ -5,7 +5,7 @@ import os
  
 # Lambda execution starts here.
 def lambda_handler(event, context):
-
+    # Env variables
     es_host       = os.getenv('ES_HOST')
     es_password   = os.getenv('ES_PASSWORD')
     es_login      = os.getenv('ES_LOGIN')
@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     es_except_indices = os.getenv('ES_EXCEPT_INDICES')
     es_unit        = os.getenv('ES_UNIT')
     es_unit_count  = int(os.getenv('ES_UNIT_COUNT'))
-    
+    # Check if login is set or not
     if es_login:
      es = Elasticsearch(
     hosts = [{'host': es_host , 'port': 443}],
@@ -37,7 +37,7 @@ def lambda_handler(event, context):
     # Source https://curator.readthedocs.io/en/latest/examples.html
     index_list.filter_by_age(source='creation_date', direction='older', timestring='%Y-%m-%d', unit=es_unit, unit_count=es_unit_count)
 
-
+    # Delete execption indices
     def pop_used(indices,word):
         for i in index_list.indices:
             if i.find(word) == 1:
